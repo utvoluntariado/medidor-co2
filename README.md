@@ -1,4 +1,4 @@
-# Medidor CO2
+# Medidor CO2 (BORRADOR EN PROCESO)
 
 ## Tabla de contenidos
 1. [Empezando por el principio: ¿porqué un medidor de CO₂?](#empezando)
