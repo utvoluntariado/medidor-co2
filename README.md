@@ -1,17 +1,24 @@
 # Medidor CO2 (BORRADOR EN PROCESO)
 
-## Tabla de contenidos
-1. [Empezando por el principio: ¿porqué un medidor de CO₂?](#empezando)
-2. [Consideraciones previas](#consideraciones)
-3. [Manos a la obra: ¿qué necesitamos?](#componentes)
-4. [Hardware: Montando el sensor de CO₂](#sensor)
-5. [Hardware: Montando la pantalla](#pantalla)
-6. [Software: Dándole vida](#software)
-7. [Cómo funciona](#funcionamiento)
-8. [Posibilidades y ampliaciones](#posibilidades)
-9. [Notas para técnicos y profesionales](#notas-para-tecnicos)
-10. [Preguntas frecuentes acerca de funcionamiento, uso y calibración](#faq)
-11. [Referencias y créditos](#creditos)
+# Tabla de contenidos
+- [1. Empezando por el principio: ¿porqué un medidor de CO₂?](#empezando)
+  - [1.1 Pero ¿porqué medir la concentración de CO₂?](#empezando-porque)
+- [2. Consideraciones previas](#consideraciones)
+- [3. Manos a la obra: ¿qué necesitamos?](#componentes)
+  - [3.1 Raspberry Pi Zero WH](#componentes-raspberry)
+  - [3.2 Tarjeta Micro SD](#componentes-sd)
+  - [3.3 Sensor de CO₂ MH-Z19B](#componentes-sensor)
+  - [3.4 Pantalla](#componentes-pantalla)
+  - [3.5 Batería](#componentes-bateria)
+  - [3.6 Cableado](#componentes-cableado)
+- [4. Hardware: Montando el sensor de CO₂](#sensor)
+- [5. Hardware: Montando la pantalla](#pantalla)
+- [6. Software: Dándole vida](#software)
+- [7. Cómo funciona](#funcionamiento)
+- [8. Posibilidades y ampliaciones](#posibilidades)
+- [9. Notas para técnicos y profesionales](#notas-para-tecnicos)
+- [10. Preguntas frecuentes acerca de funcionamiento, uso y calibración](#faq)
+- [11. Referencias y créditos](#creditos)
 
 ### 1. Empezando por el principio: ¿porqué un medidor de CO₂? <a name="empezando"></a>
 La pandemia de COVID-19 ha movido a muchos profesionales y expertos a divulgar conocimiento, cada uno en su campo: Acerca del propio virus SARS-CoV-2 o de las herramientas de las que disponemos para combatirlo. Entre éstas últimas está la tecnología de la que disponemos en el siglo XXI.
@@ -23,7 +30,7 @@ Nosotros, los trabajadores del sector tecnológico, tenemos el deber de nutrirno
 Pero yendo un paso mas allá, quizá sea el momento de que todos hagamos un pequeño esfuerzo por mejorar nuestras competencias tecnológicas, para así alcanzar un nivel de sincronía adecuado con el año en el que vivimos y la tecnología que nos rodea. 
 Solo comprendiendo las herramientas de las que disponemos, conseguiremos usarlas correctamente en nuestro beneficio.
 
-#### 1.1 Pero ¿porqué medir la concentración de CO₂?
+#### 1.1 Pero ¿porqué medir la concentración de CO₂? <a name="empezando-porque"></a>
 En un espacio interior como pueda ser una tienda, un restaurante, o la casa de un amigo, la concentración de CO₂ se eleva en función del número de personas que hay respirando.
 Al exhalar CO₂ con la respiración, poco a poco la habitación se va "llenando" de este gas. Si no se ventila, dicha concentración de CO₂ se va acumulando con el paso de los minutos y las horas. 
 El trabajo de científicos reputados como [Jose-Luis Jimenez](https://twitter.com/jljcolorado), nos indica que la ventilación y la renovación de aire es vital para evitar la propagación de enfermedades que se transmiten por el aire, como el COVID-19.
@@ -53,7 +60,7 @@ Vamos a usar principalmente:
 
 Ésta es la lista de la compra:
 
-#### 3.1 Raspberry Pi Zero
+#### 3.1 Raspberry Pi Zero <a name="componentes-raspberry"></a>
 Esta plaquita nos va a dar el soporte necesario para poder fabricar nuestro medidor de CO₂. Se trata básicamente de un microordenador y está orientada a aficionados de la computación educativa y emprendedores informáticos que desean tener equipos económicos para crear desarrollos y proyectos ambiciosos dentro del campo de la robótica y la automatización.
 Para comprarla, tenemos que tener en cuenta lo siguiente:
   * El nombre completo del modelo que necesitamos es Raspberry Pi Zero WH.
@@ -73,7 +80,7 @@ Si andáis justos de presupuesto, buscad el mas barato. La placa es la misma ind
 
 ---
 
-#### 3.2 Tarjeta Micro SD
+#### 3.2 Tarjeta Micro SD <a name="componentes-sd"></a>
 Una tarjeta SD mínimo de 8Gb en la que instalaremos el software que manejará todo el sistema. La introduciremos en nuestra Raspberry Pi Zero.
 
 Como siempre tenéis muchísimas opciones. Os dejo un par de enlaces en Amazon:
@@ -84,7 +91,7 @@ Como siempre tenéis muchísimas opciones. Os dejo un par de enlaces en Amazon:
 
 ---
 
-#### 3.3 Sensor de CO₂ MH-Z19B
+#### 3.3 Sensor de CO₂ MH-Z19B <a name="componentes-sensor"></a>
 Hay varios modelos comeriales de este sensor y tenemos que tener en cuenta varias cosas antes de comprar el adecuado:
   * Que venga con las patillas soldadas
   * Que venga con las patillas al aire, sin ningún tipo de conector ni cable
@@ -99,7 +106,7 @@ Particularmente lo he comprado [en esta tienda de electrónica](https://electron
 
 ---
 
-#### 3.4 Mini pantalla
+#### 3.4 Pantalla <a name="componentes-pantalla"></a>
 Aquí las opciones son muchas y muy variadas. Para este proyecto hemos seleccionado una pantalla de 1.8 pulgadas que nos ofrece unas pocas líneas de texto. Concretamente ésta.
 
 ![pantalla](https://github.com/jorgej-ramos/medidor-co2/blob/main/images/Pantalla18-micro.png?raw=true)
@@ -110,7 +117,7 @@ Yo la he conseguido desde [Amazon](https://www.amazon.es/gp/product/B078J5TS2G/r
 
 ---
 
-#### 3.5 Batería
+#### 3.5 Batería <a name="componentes-bateria"></a>
 Cualquier batería o powerbank que tengamos por casa nos vale para este proyecto. Por eso no voy a incluir el precio en este documento.
 
 Existen no obstante placas preparadas para esto, como por ejemplo [esta](https://www.amazon.es/gp/product/B072QZXTGS/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1) o [esta que funciona con pilas](https://www.amazon.es/diymore-Battery-Raspberry-Arduino-ESP8266/dp/B07S3H1V77/ref=sr_1_2?__mk_es_ES=ÅMÅŽÕÑ&dchild=1&keywords=raspberry+pi+pilas&qid=1610108860&sr=8-2). Como veis a precios bastante bajos y, seguro que buscando un poco mas, encontrais algo mejor. Si pretendes realizar un aparato completamente autónomo, con su batería recargable o pilas incorporadas, te recomiendo usar alguna de estas placas. 
@@ -121,7 +128,7 @@ Si no, optar por la versatilidad de alimentar el medidor con cualquier fuente US
 
 ---
 
-#### 3.6 Cableado
+#### 3.6 Cableado <a name="componentes-cableado"></a>
 Necesitamos un tipo de cableado especial que se llama "puente Dupont", para conectar la pantalla y el sensor a la placa. Ésto nos va a evitar la soldadura. 
 
 Son realmente baratos, y los venden en packs en muchas ocasiones, con diferentes longitudes. Tenemos que tener en cuenta lo siguiente:
