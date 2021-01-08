@@ -39,6 +39,7 @@ Antes de ponernos a trabajar tenemos que tener muy claras ciertas pautas:
  - Si no has hecho nunca nada así, tu éxito depende enteramente de que sigas las instrucciones que se proveen. No se requiere ninguna habilidad técnica.
  - Cuando termines tu medidor de CO₂, te animo personalmente a que sigas trabajando en él: búscale un lugar adecuado, dótalo de una carcasa o soporte físico mejor, procúrale una mejor fuente de alimentación, etc.
  - Dado que no somos fabricantes, no vas a obtener un aparato "bonito", pero si funcional. Diponer de equipos caros como una impresora 3D o una inyectora de plástico haría que tu medidor de CO₂ luciera mejor. Pero se trata de reducir el coste al máximo, manteniendo la facilidad de montaje y la premisa de no requerir conocimientos técnicos previos.
+ - Por supuesto, el precio puede verse reducido todavía mas si usamos otro tipo de placas como Arduino. Hemos elegido Raspberry Pi por facilidad de uso y sencillez a la hora de instalar en ella un sistema operativo preconfigurado con todo lo necesario para que sea "enchufar y listo". Si eres un usuario avanzado y puedes con Arduino u otros microcontroladores te animo a compartirlo para que otros puedan construirlo.
  
 Si no estás de acuerdo con estos puntos, es mejor que no continúes. Pero si te parece bien ¡adelante!
 
