@@ -139,8 +139,48 @@ Os invito a buscar los mas adecuados para vuestro uso. Os dejo algún ejemplo
 Con todo esto estamos listos para montar nuestro propio sensor de CO₂ por un **coste total aproximado de 70€**
 
 ### 4. Hardware: Montando el sensor de CO₂ <a name="sensor"></a>
+Para poder activar y leer el sensor de CO₂ que hemos comprado, lo primero que tenemos que hacer es conectarlo a la placa Raspberry Pi Zero. Como ya habrás supuesto, para eso están esas "patillas" que tienen tanto el sensor como la placa.
+
+Si nos fijamos en la placa, tenemos dos hileras largas de patillas. Cada una de ellas tiene una función específica, pero no entraremos en detalles mas allá de lo que necesitamos saber.
+
+Coloca la placa de tal modo que las "patillas" queden boca arriba y lo mas lejos de ti posible.
+
+Ahora fíjate en el siguiente esquema y conecta el sensor exactamente como se indica. Te recomiendo que respetes los colores rojo (corriente) y negro (tierra) de los cables Dupont para tenerlos idenficados (puedes ver una imagen mas grande en [este enlace](https://github.com/jorgej-ramos/medidor-co2/blob/main/images/conexiones-sensor.png?raw=true))
+
+![esquema-sensor](https://github.com/jorgej-ramos/medidor-co2/blob/main/images/conexiones-sensor-small.png?raw=true)
+
+Especial atención a las "patillas" del sensor. Hay que fijarse muy bien en las inscripciones que lleva impresas:
+ * **"GND"**: Toma de tierra
+ * **"Vin"**: Toma de corriente (+5V)
+ * **"Tx"**: (en ocasiones viene como TXD)
+ * **"Rx"**: (en ocasiones viene como RXD)
+ 
+No podemos cometer errores con esto o no funcionará. En el peor de los casos si confundimos el cable rojo o el negro podremos dañar el sensor. Es preferible repasar varias veces las conexiones antes de continuar.
+
+¡Nada mas por el momento! Es así de sencillo. Podemos dejarlo "colgando" para probar mas adelante que efectivamente funciona. No hay problema.
 
 ### 5. Hardware: Montando la pantalla <a name="pantalla"></a>
+Sin mover nuestra Raspberry Pi Zero de la posición en la que está, tomamos la pantalla y comenzamos a conectarla usando los cables Dupont, siguiendo el siguiente esquema. De nuevo te recomiendo respetar los colores rojo (corriente) y negro (tierra) de los cables Dupont para tenerlos idenficados. (puedes ver una imagen mas grande en [este enlace](https://github.com/jorgej-ramos/medidor-co2/blob/main/images/conexiones-pantalla.png?raw=true))
+
+![esquema-pantalla](https://github.com/jorgej-ramos/medidor-co2/blob/main/images/conexiones-pantalla-small.png?raw=true)
+
+Especial atención a las "patillas" de la pantalla. Hay que fijarse muy bien en las inscripciones que lleva impresas:
+ * **"VCC"**: Toma de corriente (+5V)
+ * **"GND"**: Toma de tierra
+ * **"CS"**
+ * **"RESET"**
+ * **"AO"**
+ * **"SDA"**
+ * **"SCK"**
+ * **"LED"**
+
+Ahora mismo tendrás una maraña de cables y la pantalla y el sensor por ahi "colgando". No te preocupes, esto es normal y es la manera en la que vamos a probar que todo funciona.
+
+Una vez mas, es el momento de repasar bien todas las conexiones. Te dejo un esquema que representa cómo deberías tenerlo ahora mismo (puedes ver una imagen mas grande en [este enlace](https://github.com/jorgej-ramos/medidor-co2/blob/main/images/conexiones-final.png?raw=true))
+
+![esquema-final](https://github.com/jorgej-ramos/medidor-co2/blob/main/images/conexiones-final-small.png?raw=true)
+
+Si todo está correcto, ya te puedes olvidar de las "patillas", los cables y conectar cosas: hemos terminado con el hardware.
 
 ### 6. Software: Dándole vida <a name="software"></a>
 
