@@ -110,9 +110,13 @@ Yo la he conseguido desde [Amazon](https://www.amazon.es/gp/product/B078J5TS2G/r
 ---
 
 #### 3.5 Batería
-Cualquer batería o powerbank que tengamos por casa nos vale para este proyecto. Por eso no voy a incluir el precio en este documento.
+Cualquier batería o powerbank que tengamos por casa nos vale para este proyecto. Por eso no voy a incluir el precio en este documento.
 
-**IMPORTANTE**: Necesitaremos un cable USB
+Existen no obstante placas preparadas para esto, como por ejemplo [esta](https://www.amazon.es/gp/product/B072QZXTGS/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1) o [esta que funciona con pilas](https://www.amazon.es/diymore-Battery-Raspberry-Arduino-ESP8266/dp/B07S3H1V77/ref=sr_1_2?__mk_es_ES=ÅMÅŽÕÑ&dchild=1&keywords=raspberry+pi+pilas&qid=1610108860&sr=8-2). Como veis a precios bastante bajos y, seguro que buscando un poco mas, encontrais algo mejor. Si pretendes realizar un aparato completamente autónomo, con su batería recargable o pilas incorporadas, te recomiendo usar alguna de estas placas. 
+
+Si no, optar por la versatilidad de alimentar el medidor con cualquier fuente USB también es una opción bastante interesante, según el caso.
+
+**IMPORTANTE**: Necesitaremos un *cable micro USB* para alimentar todo el sistema. Es un *cable micro USB* normal y corriente, como el de carga para los mandos de la PS4, por ejemplo, o algunos telefonos Android. Seguro que alguno tienes por casa.
 
 ---
 
