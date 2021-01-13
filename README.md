@@ -58,7 +58,7 @@ Vamos a usar principalmente:
 - **Raspberry Pi Zero**: Necesitamos un "cerebro" que coordine todo esto. Raspberry es una plaquita que contiene un mini-ordenador. Es de muy bajo coste, fácil de usar y es perfecta para este proyecto.
 - **Una fuente de alimentación portátil**: dado que nuestro "cerebro" se alimenta por USB, podemos usar una batería portátil cualquiera, o una que se pueda integrar con toda la lista anterior.
 
-Ésta es la lista de la compra:
+Ésta es la lista de la compra (léela entera antes de comprar, para decidir bien que componentes elegir):
 
 #### 3.1 Raspberry Pi Zero <a name="componentes-raspberry"></a>
 Esta plaquita nos va a dar el soporte necesario para poder fabricar nuestro medidor de CO₂. Se trata básicamente de un microordenador y está orientada a aficionados de la computación educativa y emprendedores informáticos que desean tener equipos económicos para crear desarrollos y proyectos ambiciosos dentro del campo de la robótica y la automatización.
@@ -87,6 +87,8 @@ Como siempre tenéis muchísimas opciones. Os dejo un par de enlaces en Amazon:
  * [Tarjeta SD 8Gb](https://www.amazon.es/Transcend-TS8GUSD300S-Tarjeta-microSD/dp/B07JHGQTCY/ref=sr_1_5?__mk_es_ES=ÅMÅŽÕÑ&dchild=1&keywords=tarjeta+8gb&qid=1610098200&refinements=p_85%3A831314031&rnid=831276031&rps=1&sr=8-5)
  * [Tarjeta SD 16Gb](https://www.amazon.es/Kingston-Tarjeta-SDCS2-16GB-Adaptador/dp/B07YGZHSJS/ref=sr_1_4?__mk_es_ES=ÅMÅŽÕÑ&dchild=1&keywords=tarjeta+8gb&qid=1610098200&refinements=p_85%3A831314031&rnid=831276031&rps=1&sr=8-4)
 
+IMPORTANTE: Necesitaremos usar esta tarjeta SD en el ordenador. Si no dispones de ranuras para insertar estas tarjetas busca un adaptador USB. En Amazon tienes miles. Prueba a buscar "adaptador SD USB". Incluso hay vendedores que ofrecen las dos cosas juntas: [adaptador USB y tarjeta SD](https://www.amazon.es/SanDisk-Ultra-Android-microSDHC-MobileMate/dp/B07J4T2WTP/ref=sr_1_33?__mk_es_ES=ÅMÅŽÕÑ&dchild=1&keywords=sd+16gb+usb&qid=1610535930&sr=8-33)
+
 **Coste medio: 5€**
 
 ---
@@ -112,6 +114,7 @@ Aquí las opciones son muchas y muy variadas. Para este proyecto hemos seleccion
 ![pantalla](https://github.com/jorgej-ramos/medidor-co2/blob/main/images/Pantalla18-micro.png?raw=true)
 
 Yo la he conseguido desde [Amazon](https://www.amazon.es/gp/product/B078J5TS2G/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1) pero podéis buscarla en cualquier otro comercio.
+IMPORTANTE: la pantalla ha de ser de 1.8 pulgadas. El software está preparado para mostrar correctamente las mediciones usando este tamaño de pantalla.
 
 **Coste medio: 8€**
 
@@ -195,13 +198,68 @@ Una vez mas, es el momento de repasar bien todas las conexiones. Te dejo un esqu
 Si todo está correcto, ya te puedes olvidar de las "patillas", los cables y conectar cosas: hemos terminado con el hardware.
 
 ### 6. Software: Dándole vida <a name="software"></a>
+Para que todo esto funcione, necesitamos un software que lo gestione y nos provea de las funcionalidades que necesitamos. Este software irá en la tarjeta SD que hemos comprado, y ésta se introducirá en la Raspberry Pi Zero. 
+Se ha dejado a disposición de todo el mundo una imagen de Raspberry Pi OS Lite preparada con todo lo necesario.
+
+Esta imagen es una copia exacta del sistema que ha hecho funcionar este proyecto durante las pruebas y viene lista para ser usada. Pero para usarla tenemos que "quemarla" en una tarjeta SD.
+Si es la primera vez que "quemas" una imagen en una tarjeta SD, sigue estos pasos:
+
+ * Pincha la tarjeta SD en tu ordenador. Para ello podemos usar la ranura que tengamos disponible para esto. Si no tenemos ranura, utiliza el adaptador USB del que hablamos en la lista de la compra.
+ * Descarga la imagen preparada [desde este enlace]()
+ * Ahora necesitamos un programa que nos "queme" esta imagen recién descargada en nuestra tarjeta SD. Hay diversas opciones dependiendo del sistema operativo del ordenador que uses, pero existe una opción que vale para Windows, macOS y Linux: **balenaEtcher**, que puedes [descargar desde este enlace](https://www.balena.io/etcher/)
+ * Ejecuta **balenaEtcher** y cuando se abra la ventana sigue las instrucciones:
+   - Selecciona la imagen que acabas de bajar
+   - Selecciona la tarjeta SD donde la quieres "quemar"
+   - Haz click en "Burn" y espera a que el proceso acabe
+ * Cuando todo termine, introduce la tarjeta SD en tu Rasperry Pi Zero y enciéndela.
+ * Pasados unos segundos deberías ver en la pequeña pantalla la medición actual así como la red WiFi para consultarla.
+
+¡Así de sencillo!
 
 ### 7. Cómo funciona <a name="funcionamiento"></a>
+Como ya tenemos funcionando el medidor de CO₂, observemos la pequeña pantalla. Nos muestra dos datos
+  * Wifi: nombre de la red WiFi que ha creado nuestra Raspberry Pi
+  * Medición de CO2: La medición actual expresada en PPM.
+  
+¿Una red Wifi? ¿para qué? Bueno, este medidor de CO₂ ofrece dos modos de lectura:
+ * Directamente en la pequeña pantalla
+ * A través de una red Wifi creada específicamente para consultar la lectura desde cualquier terminal móvil.
+ 
+A través de la red WiFi, cualquier persona que se encuentre cerca del medidor podrá consultar la medición actual. Esto quizá sea especialmente útil para establecimientos cara al público.
+
+Para ofrecer a clientes y visitantes esta opción, consulta en la pequeña pantalla el nombre de la red WiFi que se ha creado. Este nombre cambia cada vez que enciendes el medidor, y se ha hecho así a propósito para evitar problemas si varios de estos medidores se encuentran relativamente cerca.
+
+Cuando trates de conectarte a la red WiFi creada por el medidor, aparecerá una ventana mostrando la información adecuada directamente en tu móvil. Ésto se llama **portal cautivo** y es el mismo sistema que se utiliza en algunos hoteles, por ejemplo, para ofrecer conectividad a Internet a sus clientes. Solo que en este caso solo ofrecemos la lectura directa del medidor.
+
+Para seguir usando tu teléfono móvil con normalidad, no olvides desconectarte de la red WiFi del medidor.
 
 ### 8. Posibilidades y ampliaciones <a name="posibilidades"></a>
+Ésta no es sino la primera versión de un proyecto "maker" de medidor de CO₂. Las posibilidades a partir de aquí son prácticamente infinitas: desde conectarlo a un sistema domótico hasta añadirle alarmas sonoras o visuales. Siéntete libre de usar el código publicado para adaptarlo a tus necesidades.
 
 ### 9. Notas para técnicos y profesionales <a name="notas-para-tecnicos"></a>
+Tanto el software como el hardware es altamente mejorable. A nivel de hardware usar cualquier microcontrolador reduciría el precio entre otras cosas, por ejemplo. Pensad que ésta es la primera iteración de un proyecto que pretende ser plug n' play. No pretende en ningún caso ser un tutorial técnico. 
+
+La única finalidad de este proyecto es acercar a personas no-técnicas una forma fácil de montar su propio medidor de CO₂. Es por ello que se ha pensado de modo que evitemos las soldaduras o la programación, no se han incluido leds de aviso, ni botones de calibración, ni ningún otro componente mas allá de los estrictamente necesarios para un funcionamiento "de mínimos".
+
+Por supuesto todas las sugerencias son bienvenidas, pero recordad que los estándares del proyecto siempre apuntarán al "keep it simple". Tan simple que pueda realizarse en una aula de tecnología en un colegio.
 
 ### 10. Preguntas frecuentes acerca de funcionamiento, uso y calibración <a name="faq"></a>
+* Antes de realizar cualquier operación sobre el medidor, quítale la corriente.
+* El sensor viene calibrado con un valor de referencia de 400ppm.
+* El sistema tiene integrados los siguientes códigos de alerta (color de la medición y lectura en los terminales móviles)
+  - **VERDE** Valores por debajo de 700ppm. Calidad del aire dentro de los rangos de seguridad.
+  - **AMARILLO** Valores entre 700ppm y 1000ppm. Se está comenzando a superar el rango de seguridad. Se recomienda ventilación.
+  - **ROJO** Valores superiores. Se requiere ventilación inmediata.
+* Es muy recomendable buscar un sitio adecuado para colocar el medidor.
+* Si ha dejado de funcionar, trata de volver a "quemar" la imagen en la tarjeta SD.
 
 ### 11. Referencias y créditos <a name="creditos"></a>
+El software de terceros que se ha usado para crear este medidor es el siguiente:
+* [Raspberry Pi OS Lite](https://www.raspberrypi.org/software/operating-systems/)
+* [mh-z19 0.6.3](https://github.com/UedaTakeyuki/mh-z19) (@UedaTakeyuki)
+* [asciimatics](https://github.com/peterbrittain/asciimatics) (@peterbrittain)
+* [nodogsplash](https://github.com/nodogsplash/nodogsplash) (@nodogsplash)
+* [hostapd](https://en.wikipedia.org/wiki/Hostapd)
+* [dnsmasq](https://en.wikipedia.org/wiki/Dnsmasq)
+
+La imagen del sistema preparada, el script que consulta la medición del sensor, así como la web que se muestra en el portal cautivo han sido creados por Jorge J. Ramos (@jorgej-ramos) y puestos a disposición de la comunidad en este repositorio.
