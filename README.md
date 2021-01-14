@@ -24,4 +24,4 @@ El software de terceros que se ha usado para crear este medidor es el siguiente:
 * [hostapd](https://en.wikipedia.org/wiki/Hostapd)
 * [dnsmasq](https://en.wikipedia.org/wiki/Dnsmasq)
 
-La imagen del sistema preparada, el script que consulta la medición del sensor, así como la web que se muestra en el portal cautivo han sido creados por Jorge J. Ramos (@jorgej-ramos) y puestos a disposición de la comunidad en este repositorio.
+La idea original, la imagen del sistema preparada, el script que consulta la medición del sensor, así como la web que se muestra en el portal cautivo han sido creados por Jorge J. Ramos (@jorgej-ramos) y puestos a disposición de la Unidad Tecnológica de Voluntariado en este repositorio.
