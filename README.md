@@ -3,7 +3,7 @@ En este repositorio se exponen unas instrucciones sencillas para que cualquier p
 
 De gran utilidad en locales abiertos al público, tales como tiendas, bares o restaurantes. Para que de un modo ecnoómico puedan ofrecer a sus clientes una forma de comprobar la correcta ventilación del espacio.
 
-Consulta el tutorial para construir tu medidor de CO₂ en la [wiki de este repositorio](https://github.com/jorgej-ramos/medidor-co2/wiki).
+Consulta el tutorial para construir tu medidor de CO₂ en la [wiki de este repositorio](https://github.com/utvoluntariado/medidor-co2/wiki).
 
 ## 1. Preguntas frecuentes acerca de funcionamiento, uso y calibración
 * Antes de realizar cualquier operación sobre el medidor, quítale la corriente.
