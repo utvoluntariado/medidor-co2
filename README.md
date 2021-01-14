@@ -8,6 +8,7 @@ Consulta el tutorial para construir tu medidor de CO₂ en la [wiki de este repo
 ## 1. Preguntas frecuentes acerca de funcionamiento, uso y calibración
 * Antes de realizar cualquier operación sobre el medidor, quítale la corriente.
 * El sensor viene calibrado con un valor de referencia de 400ppm.
+* Durante el encendido, es normal observar lecturas de 500ppm en descenso hasta 400ppm antes de comenzar a registrar lecturas reales. Dale unos segundos al sensor para que tome buenas lecturas.
 * El sistema tiene integrados los siguientes códigos de alerta (color de la medición y lectura en los terminales móviles)
   - **VERDE** Valores por debajo de 700ppm. Calidad del aire dentro de los rangos de seguridad.
   - **AMARILLO** Valores entre 700ppm y 1400ppm. Se está comenzando a superar el rango de seguridad. Se recomienda ventilación.
