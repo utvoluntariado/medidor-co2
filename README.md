@@ -1,4 +1,4 @@
-# Medidor CO2
+# Medidor de CO₂ económico y fácil de hacer
 En este repositorio se exponen unas instrucciones sencillas para que cualquier persona pueda construir, por un precio muy reducido, un medidor de CO₂. Éste medidor podrá ser usado como medidor portátil o fijo, y además proveerá una red WiFi desde la que poder consultar la medición del sensor en tiempo real.
 
 De gran utilidad en locales abiertos al público, tales como tiendas, bares o restaurantes. Para que de un modo económico puedan ofrecer a sus clientes una forma de comprobar la correcta ventilación del espacio.
