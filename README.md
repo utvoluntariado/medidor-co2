@@ -1,7 +1,7 @@
 # Medidor CO2
 En este repositorio se exponen unas instrucciones sencillas para que cualquier persona pueda construir, por un precio muy reducido, un medidor de CO₂. Éste medidor podrá ser usado como medidor portátil o fijo, y además proveerá una red WiFi desde la que poder consultar la medición del sensor en tiempo real.
 
-De gran utilidad en locales abiertos al público, tales como tiendas, bares o restaurantes. Para que de un modo ecnoómico puedan ofrecer a sus clientes una forma de comprobar la correcta ventilación del espacio.
+De gran utilidad en locales abiertos al público, tales como tiendas, bares o restaurantes. Para que de un modo económico puedan ofrecer a sus clientes una forma de comprobar la correcta ventilación del espacio.
 
 Consulta el tutorial para construir tu medidor de CO₂ en la [wiki de este repositorio](https://github.com/utvoluntariado/medidor-co2/wiki).
 
