@@ -1,4 +1,7 @@
 # Medidor de CO₂ económico y fácil de hacer
+
+![](https://github.com/utvoluntariado/medidor-co2/blob/main/images/Medidor-pantalla.png?raw=true)
+
 En este repositorio se exponen unas instrucciones sencillas para que cualquier persona pueda construir, por un precio muy reducido, un medidor de CO₂. Éste medidor podrá ser usado como medidor portátil o fijo, y además proveerá una red WiFi desde la que poder consultar la medición del sensor en tiempo real.
 
 De gran utilidad en locales abiertos al público, tales como tiendas, bares o restaurantes. Para que de un modo económico puedan ofrecer a sus clientes una forma de comprobar la correcta ventilación del espacio.
@@ -14,6 +17,11 @@ Consulta el tutorial para construir tu medidor de CO₂ en la [wiki de este repo
   - **VERDE**: Valores por debajo de 700ppm. Calidad del aire dentro de los rangos de seguridad.
   - **AMARILLO**: Valores entre 700ppm y 1400ppm. Se está comenzando a superar el rango de seguridad. Se recomienda ventilación.
   - **ROJO**: Valores superiores a 1400ppm. Se requiere ventilación inmediata.
+  
+  ![](https://github.com/utvoluntariado/medidor-co2/blob/main/images/PortalCautivo-Medición-OK.jpg?raw=true)
+  ![](https://github.com/utvoluntariado/medidor-co2/blob/main/images/PortalCautivo-Medición-AL.jpg?raw=true)
+  ![](https://github.com/utvoluntariado/medidor-co2/blob/main/images/PortalCautivo-Medición-KO.jpg?raw=true)
+  
 * Es muy recomendable buscar un sitio adecuado para colocar el medidor.
 * Si ha dejado de funcionar, trata de volver a "quemar" la imagen en la tarjeta SD.
 
